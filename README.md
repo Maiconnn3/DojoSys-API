@@ -5,7 +5,7 @@
 ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
 ## 📌 Sobre o Projeto
-O **Judomenu** é uma API REST desenvolvida para gerenciar os alunos de um dojo de judô. 
+O **DojoSys API** é uma API REST desenvolvida para gerenciar os alunos de um dojo de judô. 
 
 Este projeto foi construído como um laboratório prático para explorar e consolidar conceitos fundamentais do desenvolvimento backend com **Java e Spring Boot**. O foco principal foi estruturar uma arquitetura limpa em camadas (Controller, Service, Repository) e compreender o fluxo de requisições web.
 
