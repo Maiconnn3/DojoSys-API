@@ -1,10 +1,12 @@
 package com.maicon.dojosys.service;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.maicon.dojosys.model.Judoca;
 import com.maicon.dojosys.repository.JudocaRepository;
-import org.springframework.stereotype.Service;
-import java.util.Optional;
-import java.util.List;
 
 @Service
 public class JudocaService{
@@ -24,7 +26,10 @@ public class JudocaService{
             throw new IllegalArgumentException("A idade não pode ser vazia ou negativa!"); 
         }
         if(j.getPeso() < 0){
-            throw new IllegalArgumentException("A idade não pode ser vazia ou negativa!"); 
+            throw new IllegalArgumentException("O peso não pode ser vazio ou negativo!"); 
+        }
+        if(j.getFaixa() == null || j.getFaixa().getId() < 1 || j.getFaixa().getId() > 9){
+            throw new IllegalArgumentException("A faixa informada é inválida! Escolha um ID entre 1 (Branca) e 9 (Preta)");
         }
     }
 
@@ -51,7 +56,7 @@ public class JudocaService{
         judocaExistente.setIdade(judocaAtualizado.getIdade());
         judocaExistente.setFaixa(judocaAtualizado.getFaixa());
         judocaExistente.setPeso(judocaAtualizado.getPeso());
-        return null;
+        return repository.save(judocaExistente);
     }
 
     public void deletarJudoca(Long id){

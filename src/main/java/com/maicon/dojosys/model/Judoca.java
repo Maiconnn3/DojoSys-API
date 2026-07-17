@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,8 +18,11 @@ public class Judoca{
 
     private String nome;
     private int idade;
-    private String faixa;
     private double peso;
+    
+    @ManyToOne
+    @JoinColumn(name = "faixa_id")    
+    private Faixa faixa;
 
     public Judoca(){
     }
@@ -34,7 +39,7 @@ public class Judoca{
         return idade;
     }
 
-    public String getFaixa(){
+    public Faixa getFaixa(){
         return faixa;
     }
 
@@ -54,7 +59,7 @@ public class Judoca{
         this.idade = idade;
     }
 
-    public void setFaixa(String faixa){
+    public void setFaixa(Faixa faixa){
         this.faixa = faixa;
     }
 

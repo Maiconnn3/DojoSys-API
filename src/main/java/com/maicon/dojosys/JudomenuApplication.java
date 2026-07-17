@@ -9,5 +9,4 @@ public class JudomenuApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JudomenuApplication.class, args);
 	}
-
 }
